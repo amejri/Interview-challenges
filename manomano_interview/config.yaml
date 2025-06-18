@@ -1,0 +1,25 @@
+training_set : data/drugs_train.csv
+test_set : data/drugs_test.csv
+fe_set : data/drug_label_feature_eng.csv
+submission_file_path: data/submission.csv
+
+categorical_variables: ["administrative_status", "approved_for_hospital_use", "reimbursement_rate",
+"marketing_authorization_process", "label_plaquette", "label_ampoule",
+"label_flacon", "label_tube", "label_stylo",
+"label_seringue", "label_pilulier", "label_sachet",
+"label_comprime", "label_gelule", "label_film",
+"label_poche", "label_capsule", "pharmaceutical_companies"]
+
+categorical_variables_apply_get_dummies: ["administrative_status",
+"approved_for_hospital_use", "reimbursement_rate",
+"marketing_authorization_process", "pharmaceutical_companies"]
+
+numerical_variables: ["count_plaquette", "count_ampoule", "count_flacon",
+"count_tube", "count_stylo", "count_seringue",
+"count_pilulier", "count_sachet", "count_comprime",
+"count_gelule", "count_film", "count_poche",
+"count_capsule", "count_ml"]
+
+datetime_variables: ["marketing_declaration_date", "marketing_authorization_date"]
+
+redundancy_columns: ["label_plaquette", "is_verre"]
